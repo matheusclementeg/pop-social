@@ -27,7 +27,7 @@
   letter-spacing: 1px;
 }
 
-#popUp .close {
+#close {
   color: #464646;
   right: 8px;
   top: 0px;
@@ -52,17 +52,12 @@
 }
 
 a.whatsapp, a.facebook{
-  text-decoration:none !important;
-  margin: 0 auto;
+  text-decoration: none !important;
   text-align: center;
-  right: 0;
-  left: 0;
-  position: absolute;
-  width: 120px;
-  font-size: 15px;
   color: #fff !important;
   border-radius: 4px;
   padding: 8px 0;
+  display: block;
 }
 a.whatsapp{
   border-bottom: 2px solid #1bc65a;
@@ -86,6 +81,7 @@ border-bottom: 2px solid #415e93;
   cursor: pointer;
   text-align: left;
   letter-spacing: 1px;
+  left: 0;
 }
 
 #plus span{
@@ -101,6 +97,15 @@ border-bottom: 2px solid #415e93;
   border-top: 55px solid transparent;
   border-bottom: 55px solid transparent;
   border-left: 55px solid #1c8dc4;
+}
+
+.content {
+  text-align: center;
+}
+
+.content .col {
+  display: inline-block;
+  width: 40%;
 }
 
 @media all and (max-width: 900px){
