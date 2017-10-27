@@ -11,8 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
-        crossorigin="anonymous">
 
     <img src="logo-popX.png" class="rounded mx-auto d-block">
 </head>
@@ -62,22 +60,22 @@
         </div>
         <h2>Basta me enviar uma mensagem agora!</h2>
         <br>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <!-- Insira seu número com DD em "https://api.whatsapp.com/send?1=pt_BR&phone=55SEUNUMERO" -->
-                    <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55SEUNUMERO" target="_blank" class="whatsapp">
-                        <i class="fa fa-whatsapp"></i>
-                        Conversar
-                    </a>
-                </div>
-                <div class="col">
-                    <!-- Insira o Facebook da sua empresa em "https://m.me/sua-pagina" -->
-                    <a href="https://m.me/sua-pagina" target="_blank" class="facebook">
-                        <i class="fa fa-facebook"></i>
-                        Conversar
-                    </a>
-                </div>
+        <!-- <div class="container"> -->
+        <!-- <div class="row"> -->
+        <div class="content">
+            <div class="col">
+                <!-- Insira seu número com DD em "https://api.whatsapp.com/send?1=pt_BR&phone=55SEUNUMERO" -->
+                <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55SEUNUMERO" target="_blank" class="whatsapp">
+                    <i class="fa fa-whatsapp"></i>
+                    Conversar
+                </a>
+            </div>
+            <div class="col">
+                <!-- Insira o Facebook da sua empresa em "https://m.me/sua-pagina" -->
+                <a href="https://m.me/sua-pagina" target="_blank" class="facebook">
+                    <i class="fa fa-facebook"></i>
+                    Conversar
+                </a>
             </div>
         </div>
     </div>
@@ -98,7 +96,7 @@
                 }
             
                 plus.addEventListener('click', () => {
-                    popUp.style.marginLeft = '10px';
+                    popUp.style.marginLeft = '0px';
                     plus.style.marginLeft = '-425px';
                 });
             
