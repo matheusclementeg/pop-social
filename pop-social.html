@@ -51,14 +51,14 @@
         </p>
     </div>
 
-    <div id="popUp">
-        <div id="new">
-            <h5>Olá, como posso te ajudar?</h5>
+    <div id="popx-popup" class="popup-container">
+        <div class="header">
+            <span>Olá, como posso te ajudar?</span>
         </div>
-        <div id="close">
+        <div id="popx-close" class="close">
             <i class="fa fa-times"></i>
         </div>
-        <h2>Basta me enviar uma mensagem agora!</h2>
+        <span class="popup-label">Basta me enviar uma mensagem agora!</span>
         <br>
         <!-- <div class="container"> -->
         <!-- <div class="row"> -->
@@ -79,12 +79,12 @@
             </div>
         </div>
     </div>
-    <div id="plus">
+    <div id="popx-plus">
         <script type="text/javascript">
             function preparePopX() {
                 const scrollTop = document.documentElement.scrollTop;
-                const popUp = document.getElementById('popUp');
-                const plus = document.getElementById('plus');
+                const popUp = document.getElementById('popx-popup');
+                const plus = document.getElementById('popx-plus');
                 
                 if (scrollTop >= 500) {
                     popUp.style.marginLeft = '25px';
@@ -100,7 +100,7 @@
                     plus.style.marginLeft = '-425px';
                 });
             
-                document.getElementById('close').addEventListener('click', () => {
+                document.getElementById('popx-close').addEventListener('click', () => {
                     popUp.style.marginLeft = '-425px';
                     plus.style.marginLeft = '0px';
                 });

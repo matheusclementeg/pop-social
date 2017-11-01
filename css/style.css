@@ -3,47 +3,54 @@
   height: auto;
 }
 
-#popUp {
+.popup-container {
   position: fixed;
   max-width: 350px;
-  height: 225px;
   background: rgba(236, 240, 241,1);
-  border: 7px solid #fff;
+  border: 7px solid #38CBD3;
+  background-color: #38CBD3;
   bottom: 0;
   margin-left: -425px;
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.16);
+  border-radius: 8px;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
 }
 
-#new{
+.popup-container .header {
   text-align: center;
   position: relative;
-  background: #fff;
-  color: #464646;
+  background: #38cbd3;
+  color: #fafafa;
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 1px;
+  display: inline-block;
+  width: 100%;
+  padding: 12px 0;
 }
 
-#close {
-  color: #464646;
+.popup-container .close {
+  color: #fafafa;
   right: 8px;
   top: 0px;
   position: absolute;
   font-size: 20px;
   cursor: pointer;
+  padding: 8px 0;
 }
 
-#popUp h2{
+.popup-container .popup-label {
   font-size: 17px;
-  color: #464646;
+  color: #fafafa;
   line-height: 24px;
   font-weight: 400;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 20px;
   padding: 0 20px;
+  display: block;
 }
 
 #body {
@@ -68,7 +75,7 @@ border-bottom: 2px solid #415e93;
   background: #4b6598;
 }
 
-#plus{
+#popx-plus{
   position: fixed;
   color: #fff;
   bottom: 15%;
@@ -84,26 +91,27 @@ border-bottom: 2px solid #415e93;
   left: 0;
 }
 
-#plus span{
+#popx-plus span{
   position: absolute;
   margin-top: 38px;
   left: 4px;
 }
 
-#plus::after{
+#popx-plus::after{
   content: '';
   display: block;
   display: relative;
   border-top: 55px solid transparent;
   border-bottom: 55px solid transparent;
-  border-left: 55px solid #1c8dc4;
+  border-left: 55px solid #38cbd3;
 }
 
-.content {
+.popup-container .content {
   text-align: center;
+  padding-bottom: 20px;
 }
 
-.content .col {
+.popup-container .content .col {
   display: inline-block;
   width: 40%;
 }
