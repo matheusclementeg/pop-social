@@ -1,8 +1,3 @@
-#darkBack {
-  width: 100%;
-  height: auto;
-}
-
 .popup-container {
   position: fixed;
   max-width: 350px;
@@ -53,12 +48,7 @@
   display: block;
 }
 
-#body {
-  height: 1200px;
-  background: #eee;
-}
-
-a.whatsapp, a.facebook{
+a.whatsapp, a.facebook {
   text-decoration: none !important;
   text-align: center;
   color: #fff !important;
@@ -66,16 +56,18 @@ a.whatsapp, a.facebook{
   padding: 8px 0;
   display: block;
 }
-a.whatsapp{
+
+a.whatsapp {
   border-bottom: 2px solid #1bc65a;
   background: #25D366;
 }
-a.facebook{
+
+a.facebook {
 border-bottom: 2px solid #415e93;
   background: #4b6598;
 }
-
-#popx-plus{
+ 
+#popx-plus {
   position: fixed;
   color: #fff;
   bottom: 15%;
@@ -91,13 +83,13 @@ border-bottom: 2px solid #415e93;
   left: 0;
 }
 
-#popx-plus span{
+#popx-plus span {
   position: absolute;
   margin-top: 38px;
   left: 4px;
 }
 
-#popx-plus::after{
+#popx-plus::after {
   content: '';
   display: block;
   display: relative;
@@ -114,6 +106,43 @@ border-bottom: 2px solid #415e93;
 .popup-container .content .col {
   display: inline-block;
   width: 40%;
+}
+
+.demo-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.demo-container .input-header {
+  font-size: 1.4em;
+}
+
+.demo-container .input-header .number {
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 34px;
+    margin-right: 10px;
+}
+
+.demo-container .input-fields {
+    margin-left: 30px;
+    margin-top: 12px;
+}
+
+.demo-container .input-label {
+    padding: .5rem .75rem;
+    font-weight: 400;
+    line-height: 1.25;
+    color: black;
+    text-align: center;
+    border-radius: .25rem;
+}
+
+.demo-container .input-fields > div {
+    margin-bottom: 16px;
 }
 
 @media all and (max-width: 900px){
