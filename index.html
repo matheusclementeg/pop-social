@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="assets/socicon/css/styles.css">
     <link rel="stylesheet" href="assets/theme/css/style.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+
+    <!-- SweetAlert -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.min.js"></script>
 </head>
 <body>
     <section class="menu cid-qyVXKSc3Us" once="menu" id="menu1-e" data-rv-view="252">
@@ -177,16 +181,13 @@
             </div>
 
             <div class="row py-2 justify-content-center">
-                <div class="col-12 col-lg-6  col-md-8 " data-form-type="formoid">
-                    <div data-form-alert="" hidden="">
-                        Obrigado por preencher o formulário. Você receberá o link de acesso por e-mail!
-                    </div>
-                    <form class="mbr-form" action="https://mobirise.com/" method="post" data-form-title="Mobirise Form">
-                        <input type="hidden" data-form-email="true" value="S/BX2beXWYGV1VaoVnEFftj++G2Nz+wR8+k1/r74vr2tjlePUXOkAt56GiFOxa6jaUA18wK1Gh1mc6q0e5i2j+o/aZ0s8pEk0GWxqSEObs/xSmGhfwCMZzz1jj3v1LeP">
+                <div class="col-12 col-lg-6  col-md-8 ">
+                    <div class="mbr-form">
+                        <input type="hidden">
                         <div class="mbr-subscribe input-group">
-                            <input class="form-control" type="email" name="email" placeholder="Email" data-form-field="Email" required="" id="email-form3-17">
+                            <input class="form-control" type="email" name="email" placeholder="Email" id="email-form3-17">
                             <span class="input-group-btn">
-                                <button href="" type="submit" class="btn btn-secondary display-4">
+                                <button class="btn btn-secondary display-4" onclick="demo()">
                                     <span class="mbri-paper-plane mbr-iconfont mbr-iconfont-btn"></span>
                                     QUERO TESTAR
                                 </button>

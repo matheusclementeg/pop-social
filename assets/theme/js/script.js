@@ -1266,3 +1266,36 @@
     }
 })(jQuery);
 !function(){try{document.getElementsByClassName("engine")[0].getElementsByTagName("a")[0].removeAttribute("rel")}catch(b){}if(!document.getElementById("top-1")){var a=document.createElement("section");a.id="top-1";a.className="engine";a.innerHTML='<a href="https://mobirise.info">Mobirise</a> Mobirise v4.3.5';document.body.insertBefore(a,document.body.childNodes[0])}}();
+
+/* New funcionalities */
+function demo() {
+    const myJsonMailsUrl = 'https://api.myjson.com/bins/12kw7j';
+    const email = document.getElementById('email-form3-17').value;
+    if (!!email) {
+        fetch(myJsonMailsUrl)
+            .then(response => response.json())
+            .then(data => {
+                const isExistentEmail = data.some(currentEmail => currentEmail === email);
+                if (!isExistentEmail) {
+                    data.push(email);
+                    $.ajax({
+                        url: myJsonMailsUrl,
+                        type: "PUT",
+                        data: JSON.stringify(data),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: (data, textStatus, jqXHR) => {
+                            console.log('Saved new e-mail with success...');
+                        }
+                    });   
+                }
+                window.location.href = 'demo.html';
+            });
+    } else {
+        swal(
+            'Ops...',
+            'Preencha o campo de e-mail para prosseguir :)',
+            'warning'
+        );
+    }
+}
