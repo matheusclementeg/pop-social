@@ -1,3 +1,18 @@
+function prepareClipboardButton() {
+    const clipboard = new Clipboard('#copy-button');
+
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+    
+    clipboard.on('error', function(e) {
+        swal(
+            'Erro :(',
+            'Encontramos um problema ao copiar o código. Tente novamente mais tarde.',
+            'error'
+        );
+    });
+}
 function generatePopupCode() {
     /* Company data */
     const companyData = {
@@ -17,9 +32,18 @@ function generatePopupCode() {
     let popupTemplate;
     if (fieldValidation.isValid) {
         popupTemplate = _getTemplateString(companyData, popupData);
+        swal(
+            'Código copiado com sucesso',
+            'Cole o código gerado dentro da sua tag <i>body</i> e seja feliz :)',
+            'success'
+        );
     } else {
         popupTemplate = fieldValidation.message;
-        alert(fieldValidation.message);
+        swal(
+            'Ops...',
+            'Preencha todos os dados para prosseguir :)',
+            'warning'
+        );
     }
     document.getElementById('popup-code').value = popupTemplate;
 }

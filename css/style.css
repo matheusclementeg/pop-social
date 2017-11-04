@@ -145,6 +145,13 @@ border-bottom: 2px solid #415e93;
     margin-bottom: 16px;
 }
 
+/* #popup-code {
+  position: absolute;
+  top: 0;
+  border: white;
+  color: white;
+} */
+
 @media all and (max-width: 900px){
   #popUp{
     margin-left: -425px;

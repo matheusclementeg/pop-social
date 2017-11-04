@@ -11,9 +11,14 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script> 
     <script src="assets/demo.js"></script>
+
+    <!-- SweetAlert -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.min.js"></script>
 </head>
-<body>
+<body onload="prepareClipboardButton()">
     <div class="container demo-container">
         <div class="container">
             <div class="row input-header">
@@ -63,11 +68,29 @@
                 <span class="number">3</span>
                 <span>Gerar código</span>
             </div>
-            <div class="input-fields">
-                <input type="text" id="popup-code">
-                <button class="btn btn-default btn-lg" onclick="generatePopupCode()">
-                    <span class="glyphicon glyphicon-star"></span>Copiar código
-                </button>
+            <div class="input-fields text-center">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <textarea name="popup-code" id="popup-code" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="col-xs-6">
+                        <button 
+                            class="btn btn-default btn-lg btn-block"
+                            id="copy-button"
+                            data-clipboard-action="copy"
+                            data-clipboard-target="#popup-code"
+                            onclick="generatePopupCode()"
+                        >
+                            Copiar código
+                        </button>
+                        <div class="tooltip top" role="tooltip">
+                            <div class="tooltip-arrow"></div>
+                            <div class="tooltip-inner">
+                                Some tooltip text!
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
