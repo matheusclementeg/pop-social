@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PopSocial</title>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700' rel='stylesheet' type='text/css'>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script> 
+    <script src="assets/demo.js"></script>
+
+    <!-- SweetAlert -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.min.js"></script>
+</head>
+<body onload="prepareClipboardButton()">
+    <div class="container demo-container">
+        <div class="container">
+            <div class="row input-header">
+                <span class="number">1</span>
+                <span>Digite os dados da sua empresa</span>
+            </div>
+            <div class="input-fields">
+                <div class="row input-group">
+                    <span class="input-label">Messenger</span>
+                    <input type="text" class="form-control" id="fb-field" placeholder="Digite a URL da página">
+                </div>
+                <div class="row input-group">
+                    <span class="input-label">WhatsApp</span>
+                    <input type="text" class="form-control" id="wpp-field" placeholder="Número do telefone">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row input-header">
+                <span class="number">2</span>
+                <span>Customize seu PopSocial</span>
+            </div>
+            <div class="input-fields">
+                <div class="row input-group">
+                    <span class="input-label">Header</span>
+                    <input type="text" class="form-control" id="pop-header" placeholder="Digite o header do seu popup. Ex: Olá, como posso te ajudar?">
+                </div>
+                <div class="row input-group">
+                    <span class="input-label">Mensagem</span>
+                    <input type="text" class="form-control" id="pop-msg" placeholder="Digite a mensagem do seu popup. Ex: Basta me enviar uma mensagem agora!">
+                </div>
+                <div class="row input-group">
+                    <span class="input-label">Cor</span>
+                    <input type="text" class="form-control" id="pop-color" placeholder="Cor em hexadecimal. Ex: #38CBD3">
+                </div>
+                <!-- <div class="row input-group">
+                    <span class="input-label">Posição</span>
+                    <span class="input-label">
+                        <input type="radio" name="left" value="l">Esquerda
+                        <input type="radio" name="right" value="r">Direita
+                    </span>
+                </div> -->
+            </div>
+        </div>
+        <div class="container">
+            <div class="row input-header">
+                <span class="number">3</span>
+                <span>Gerar código</span>
+            </div>
+            <div class="input-fields text-center">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <textarea name="popup-code" id="popup-code" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="col-xs-6">
+                        <button 
+                            class="btn btn-default btn-lg btn-block"
+                            id="copy-button"
+                            data-clipboard-action="copy"
+                            data-clipboard-target="#popup-code"
+                            onclick="generatePopupCode()"
+                        >
+                            Copiar código
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popx">
+        <div id="popx-popup" class="popup-container">
+            <div class="header">
+                <span>Olá, como posso te ajudar?</span>
+            </div>
+            <div id="popx-close" class="close">
+                <i class="fa fa-times"></i>
+            </div>
+            <span class="popup-label">Basta me enviar uma mensagem agora!</span>
+            <br>
+            <div class="content">
+                <div class="col">
+                    <!-- Insira seu número com DD em "https://api.whatsapp.com/send?1=pt_BR&phone=55SEUNUMERO" -->
+                    <a href="https://api.whatsapp.com/send?1=pt_BR&phone=55SEUNUMERO" target="_blank" class="whatsapp">
+                        <i class="fa fa-whatsapp"></i>
+                        Conversar
+                    </a>
+                </div>
+                <div class="col">
+                    <!-- Insira o Facebook da sua empresa em "https://m.me/sua-pagina" -->
+                    <a href="https://m.me/sua-pagina" target="_blank" class="facebook">
+                        <i class="fa fa-facebook"></i>
+                        Conversar
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="popx-plus">
+            <script type="text/javascript">
+                function preparePopX() {
+                    const scrollTop = document.documentElement.scrollTop;
+                    const popUp = document.getElementById('popx-popup');
+                    const plus = document.getElementById('popx-plus');
+                    
+                    if (scrollTop >= 500) {
+                        popUp.style.marginLeft = '25px';
+                        plus.style.marginLeft = '-425px';
+                    }
+                    if (scrollTop <= 600) {
+                        popUp.style.marginLeft = '-425px';
+                        plus.style.marginLeft = '0px';
+                    }
+                
+                    plus.addEventListener('click', () => {
+                        popUp.style.marginLeft = '0px';
+                        plus.style.marginLeft = '-425px';
+                    });
+                
+                    document.getElementById('popx-close').addEventListener('click', () => {
+                        popUp.style.marginLeft = '-425px';
+                        plus.style.marginLeft = '0px';
+                    });
+                }
+                
+                preparePopX();
+            </script>
+            <span>
+                <i class="fa fa-comments"></i>
+            </span>
+        </div>
+    </div>
+</body>
+</html>
